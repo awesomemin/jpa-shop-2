@@ -5,7 +5,6 @@ import jpabook.jpashop.domain.Category;
 import jpabook.jpashop.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.coyote.BadRequestException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +33,7 @@ public abstract class Item {
     }
 
     public void removeStock(int quantity) {
-        if(quantity > stockQuantity) {
+        if (quantity > stockQuantity) {
             throw new NotEnoughStockException("need more stock");
         }
         stockQuantity -= quantity;
